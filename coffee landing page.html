@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mama's Coffee offers artisanal brews in Dhaka since 1995. Explore our specialty drinks and cozy vibe.">
+    <meta name="keywords" content="coffee shop, artisanal coffee, Dhaka cafe, Mama's Coffee">
+    <title>Mama's Premium Coffee | Artisanal Brews</title>
+    <link rel="shortcut icon" href="image (5).jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #6F4E37; /* Coffee brown */
+            --secondary: #C4A484; /* Light tan */
+            --dark: #2E1A12; /* Deep coffee */
+            --light: #F5F5DC; /* Cream */
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Header Background */
+        header {
+            background: linear-gradient(to bottom, rgba(245, 245, 220, 0.95), rgba(255, 255, 255, 0.95));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+        }
+
+        /* Navigation Styling */
+        .nav-link {
+            position: relative;
+            padding-bottom: 0.25rem;
+            transition: var(--transition);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .nav-menu {
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                transform: translateX(100%);
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+        }
+
+        /* Image Optimization */
+        .hero-bg {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Micro-Animations */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 py-4 px-4 sm:px-6 md:px-10 flex justify-between items-center">
+        <a href="#home" class="logo text-2xl sm:text-3xl font-bold text-[var(--primary)]">
+            <i class="fas fa-coffee text-[var(--primary)]"></i>
+            Mama's Coffee
+        </a>
+        <nav class="nav-menu fixed md:static top-0 right-0 h-full md:h-auto bg-[var(--light)] md:bg-transparent w-64 md:w-auto flex items-center justify-center">
+            <ul class="flex flex-col md:flex-row md:space-x-8 p-6 md:p-0 h-full md:h-auto items-center text-center">
+                <li class="mt-20 md:mt-0"><a href="#home" class="nav-link text-lg font-medium text-[var(--dark)] hover:text-[var(--primary)]">Home</a></li>
+                <li><a href="#menu" class="nav-link text-lg font-medium text-[var(--dark)] hover:text-[var(--primary)]">Menu</a></li>
+                <li><a href="#testimonials" class="nav-link text-lg font-medium text-[var(--dark)] hover:text-[var(--primary)]">Testimonials</a></li>
+                <li><a href="#about" class="nav-link text-lg font-medium text-[var(--dark)] hover:text-[var(--primary)]">About</a></li>
+                <li><a href="#contact" class="nav-link text-lg font-medium text-[var(--dark)] hover:text-[var(--primary)]">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="menuToggle" aria-label="Toggle menu" class="md:hidden text-2xl text-[var(--dark)]">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen flex items-center justify-center relative overflow-hidden" id="home">
+        <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571" alt="Coffee beans" class="hero-bg absolute inset-0">
+        <div class="relative z-10 text-center px-4 sm:px-6 md:px-10">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white drop-shadow-lg animate-fade-in">Artisanal Coffee Experience</h1>
+            <p class="text-lg sm:text-xl text-white/90 mt-4 drop-shadow-md animate-fade-in">Crafted with Passion Since 1995</p>
+            <div class="mt-6 space-x-4">
+                <a href="#menu" class="btn inline-block bg-[var(--primary)] text-white py-3 px-6 rounded-full hover:bg-[var(--secondary)] animate-fade-in">Explore Menu</a>
+                <a href="tel:+880123456789" class="btn inline-block bg-[var(--secondary)] text-white py-3 px-6 rounded-full hover:bg-[var(--primary)] animate-fade-in">Call to Order</a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-black/40"></div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section py-16 sm:py-20 px-4 sm:px-6 md:px-10 bg-[var(--light)]" id="menu">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Specialty Drinks</h2>
+        <div class="menu-grid max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Menu items loaded via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 md:px-10 bg-white" id="testimonials">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">What Our Customers Say</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div class="bg-[var(--light)] p-6 rounded-xl shadow-md animate-fade-in">
+                <p class="text-gray-600">"Amazing coffee and cozy vibe!"</p>
+                <p class="text-[var(--primary)] font-medium mt-2">- Ayesha, Dhaka</p>
+            </div>
+            <div class="bg-[var(--light)] p-6 rounded-xl shadow-md animate-fade-in">
+                <p class="text-gray-600">"Best latte in town, hands down!"</p>
+                <p class="text-[var(--primary)] font-medium mt-2">- Rahim, 2025</p>
+            </div>
+            <div class="bg-[var(--light)] p-6 rounded-xl shadow-md animate-fade-in">
+                <p class="text-gray-600">"Perfect spot for coffee lovers!"</p>
+                <p class="text-[var(--primary)] font-medium mt-2">- Sara, Dhaka</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 md:px-10 bg-[var(--light)]" id="about">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">About Us</h2>
+        <p class="max-w-3xl mx-auto text-center text-gray-600 animate-fade-in">Mama's Coffee has been serving handcrafted, artisanal brews since 1995. Our passion for quality and community drives every cup we pour.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 sm:py-20 px-4 sm:px-6 md:px-10 bg-white" id="contact">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Contact Us</h2>
+        <form class="max-w-xl mx-auto animate-fade-in">
+            <input type="text" placeholder="Your Name" class="w-full p-3 mb-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--primary)]" required>
+            <input type="email" placeholder="Your Email" class="w-full p-3 mb-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--primary)]" required>
+            <textarea placeholder="Your Message" class="w-full p-3 mb-4 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[var(--primary)]" rows="5" required></textarea>
+            <button type="submit" class="bg-[var(--primary)] text-white py-3 px-6 rounded-full hover:bg-[var(--secondary)]">Send Message</button>
+        </form>
+        <p class="max-w-3xl mx-auto text-center text-gray-600 mt-6">Visit us at 123 Coffee Lane, Dhaka, or email us at hello@mamascoffee.com.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 sm:px-6 md:px-10 bg-[var(--primary)] text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4">Mama's Coffee</h3>
+            <p>123 Coffee Lane, Dhaka | hello@mamascoffee.com | Open 8AM-10PM</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="https://facebook.com" aria-label="Facebook" class="hover:text-[var(--secondary)]"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" aria-label="Instagram" class="hover:text-[var(--secondary)]"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Load menu items with images
+        const menuData = [
+            { name: "Ethiopian Pour Over", price: "৳180", desc: "Single origin with floral notes", img: "https://images.unsplash.com/photo-1494314671908-399b18174975" },
+            { name: "Spanish Latte", price: "৳200", desc: "Sweetened with condensed milk", img: "spanish-latte.jpeg" },
+            { name: "Vietnamese Cold Brew", price: "৳220", desc: "Bold with a sweet finish", img: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13" }
+        ];
+
+        const menuGrid = document.querySelector('.menu-grid');
+        menuData.forEach((item, index) => {
+            menuGrid.innerHTML += `
+                <div class="menu-item bg-white rounded-xl p-6 shadow-md hover:shadow-lg flex items-center animate-fade-in" role="listitem" style="animation-delay: ${index * 0.1}s">
+                    <img src="${item.img}" alt="${item.name}" class="w-16 h-16 rounded-full mr-4 object-cover">
+                    <div>
+                        <h3 class="text-xl font-semibold">${item.name}</h3>
+                        <p class="text-[var(--primary)] font-medium mt-2">${item.price}</p>
+                        <p class="text-gray-600 mt-2">${item.desc}</p>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
